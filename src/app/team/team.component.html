@@ -1,0 +1,23 @@
+<div class="container">   
+    <h2>Team</h2>
+                
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Sr.</th>
+          <th>Name</th>
+          <th>Logo</th>
+          <th>State</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let i of teams let n = index;">
+          <td> {{n+1}}</td>
+          <td> {{i.name}}</td>
+          <td><img src="{{i.logoUri}}" style="width:100px;"></td>
+          <td> {{i.state}}</td>
+        </tr>
+      </tbody>
+    </table>
+    </div>
+  

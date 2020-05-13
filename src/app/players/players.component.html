@@ -1,0 +1,28 @@
+<div class="container">   
+    <h2>Players</h2>
+                
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Sr.</th>
+          <th>Firstname</th>
+          <th>Lastname</th>
+          <th>Picture</th>
+          <th>Jersey No</th>
+        </tr>
+      </thead>
+      <tbody *ngFor = "let i of players let n = index;">
+        <tr>
+          <td>{{n+1}}</td>
+          <td>{{i.firstName}}</td>
+          <td>{{i.lastName}}</td>
+          <td><img src="{{i.imageUri}}" style="width:100px;"></td>
+          <td>{{i.PlayerJerseyNumber}}</td>
+        </tr>
+      </tbody>
+    </table>
+    </div>
+  
+
+
+    

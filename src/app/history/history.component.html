@@ -1,0 +1,29 @@
+<div class="container">   
+    <h2>History</h2>
+                
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Sr.</th>
+          <th>PlayerName</th>
+          <th>Matches</th>
+          <th>Total Run</th>
+          <th>Highest Score</th>
+          <th>Fifties</th>
+          <th>Hundreds</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let i of history let n =index;">
+          <td>{{n+1}}</td>
+          <td>{{i.firstName}}  {{i.lastName}} </td>
+          <td>{{i.matches}}</td>
+          <td>{{i.run}}</td>
+          <td>{{i.highestScores}}</td>
+          <td>{{i.fifties}}</td>
+          <td>{{i.hundreds}}</td>
+        </tr>
+      </tbody>
+    </table>
+    </div>
+  
