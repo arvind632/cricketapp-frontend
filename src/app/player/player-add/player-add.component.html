@@ -1,0 +1,59 @@
+<div class="container">
+
+
+
+
+
+
+   
+    <h3>Create new player</h3>
+    <a routerLink="/playerlist" class="btn btn-default btn-sm">Back</a>
+    <hr/>
+
+    <div *ngIf="submitted" class="alert alert-success alert-dismissible">
+        <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+        <strong>Success!</strong> Player created successfully.
+    </div>
+    
+    <form #registration="ngForm" (ngSubmit)="submitRegistration()">
+
+        <div class="form-group">
+          <label>First Name</label>
+          <input type="text" class="form-control"  required  [(ngModel)]="player.firstName" 
+          name="firstName"  #firstName="ngModel">
+            <div  *ngIf="firstName.invalid && (firstName.dirty || firstName.touched)"
+            class="alert alert-danger">First Name is required
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label>Last Name</label>
+            <input type="text" class="form-control"  required  [(ngModel)]="player.lastName" 
+            name="lastName"  #lastName="ngModel">
+              <div  *ngIf="lastName.invalid && (lastName.dirty || lastName.touched)"
+              class="alert alert-danger">Last Name is required
+              </div>
+          </div>
+
+
+          <div class="form-group">
+            <label>Player Jersey number</label>
+            <input type="number" class="form-control"  required  [(ngModel)]="player.PlayerJerseyNumber" 
+            name="PlayerJerseyNumber"  #PlayerJerseyNumber="ngModel">
+              <div  *ngIf="PlayerJerseyNumber.invalid && (PlayerJerseyNumber.dirty || PlayerJerseyNumber.touched)"
+              class="alert alert-danger">Player Jersey Number is required
+              </div>
+          </div>
+
+
+          <div class="form-group">
+            <label>File upload</label>
+                        <img [src]="url" height="200"> <br/>
+            <input type='file'class="form-control"  (change)="onSelectFile($event)">
+          </div>
+
+        
+        <button type="submit" class="btn btn-success" [disabled]="!registration.form.valid">Submit</button>
+      </form>
+
+</div>
